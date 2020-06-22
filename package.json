@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Silva404/backend.git"
+    "url": "git+https://github.com/Silva404/gym.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Silva404/backend/issues"
+    "url": "https://github.com/Silva404/gym/issues"
   },
-  "homepage": "https://github.com/Silva404/backend#readme",
+  "homepage": "https://github.com/Silva404/gym#readme",
   "dependencies": {
     "express": "^4.17.1",
     "nunjucks": "^3.2.1"
