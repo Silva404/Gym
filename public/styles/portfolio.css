@@ -1,0 +1,178 @@
+:root {
+    --color-green: #78d1fd;
+    --color-red: #7159c1;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* @import 'https://fonts.googleapis.com/icon?family=Material+Icons'; */
+
+body {
+    background: #282a36;
+
+}
+
+header {
+    margin-bottom: 30px;
+    padding: 32px;
+    border-bottom: 1px solid #333;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.links {
+    text-align: center;
+}
+
+.links a {
+    font-size: 18px;
+    line-height: 28px;
+
+    color: #fff;
+    
+    margin: 0 16px;
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: var(--color-green);
+    transition: color 200ms;
+}
+
+#wrapper {
+    color: #f3f3f3;
+    text-align: center;
+    padding: 32px;
+}
+
+
+
+#wrapper h1 {
+    font-size: 42px;
+    line-height: 52px;
+}
+
+#wrapper h2 {
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 34px;
+    margin-top: 8px;
+    opacity: 0.8;
+}
+
+#wrapper h3 {
+    font-size: 22px;
+    line-height: 52px;
+    opacity: 60%;
+}
+
+#wrapper p {
+    max-width: 500px;
+    margin: 32px auto;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+#wrapper a {
+    text-decoration: none;
+    color: var(--color-green);
+}
+
+
+.cards {
+    max-width: 800px;
+    margin: 0 auto 50px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    color: #f3f3f3;
+
+}
+
+.card {
+    background: var(--color-red);
+    display: grid;
+    cursor: pointer;
+}
+
+.card_image-container img{
+    width: 100% ;
+    
+}
+
+.card_content,
+.card_info {
+    padding: 24px;
+}
+
+.card_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.card_price {
+    background: var(--color-red);
+    filter: brightness(90%);
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.featured-wrapper.card_image-container {
+    position: relative;
+}
+
+.featured {
+    background: #bbf146;
+    color: #1c1d25;
+    position: absolute;
+    right: 5px;
+    top: -10px;
+    padding: 5px 16px;  
+    border-radius: 16px;
+}
+
+/* ===========
+ */
+.modal-overlay {
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.modal {
+    background: #f3f3f3;
+    width: 80%;
+    height: 90%;
+    margin: 5vh auto;
+    position: relative;
+}
+
+.modal .close-modal {
+    color: black;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+    cursor: pointer;
+}
+
+.modal-overlay.hide {
+    display: none;
+}
+
+iframe {
+    height: 90%;
+    width: 100%;
+    position: absolute;
+    top: 40px;
+}
+

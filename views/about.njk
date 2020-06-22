@@ -1,0 +1,33 @@
+{% extends 'layout.njk' %}
+
+{% block title %}
+    <title>About</title>
+{% endblock title %}
+
+{% block content %}
+    <div id="wrapper">
+        <img src="{{ data.imgUrl}}" alt="Breno Silva" class="redondo">
+        <h1>{{ data.name}}</h1>
+        <h2>{{ data.role}}</h2>
+        <h3>{{ data.description}}</h3>
+        <p>
+            <h3>Nossa Stack</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Node</li>
+                <li>SQL</li>
+            </ul>
+            <br>
+            Colaborador da
+            <a href="https://rockeseat.com" target="_blank">Rockeseat</a>
+        </p>
+    </div>
+
+    <div class="links space">
+        {% for link in data.links %}
+            <a href="{{ link.url}}">{{ link.name}}</a>
+        {% endfor %}
+    </div>
+{% endblock content %}
