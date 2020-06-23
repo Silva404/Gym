@@ -1,0 +1,24 @@
+{
+  "instructors": [
+    null,
+    {
+      "avatar_url": "https://google.com",
+      "birth": 911952000000,
+      "gender": "M",
+      "id": 0,
+      "services": "Bodybuilding",
+      "name": "Carlos Breno Soares da Silva",
+      "created_at": 1592947329918
+    },
+    null,
+    {
+      "avatar_url": "https://google.com",
+      "birth": 911952000000,
+      "gender": "M",
+      "id": 2,
+      "services": "Bodybuilding",
+      "name": "Carlos Breno Soares da Silva",
+      "created_at": 1592947344415
+    }
+  ]
+}
