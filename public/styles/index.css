@@ -1,0 +1,38 @@
+.card {
+    min-width: 300px;
+    width: 60%;
+    height: 80%;
+    min-width: 600px;
+    margin: 3em auto;
+    background: #FFFFFF;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: 800ms ease 400ms forwards up;
+}
+
+@keyframes up {
+    from {
+        
+        transform: translateY(20px);
+    } to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.avatar {
+    background: url('https://source.unsplash.com/collection/10552289/900x900') no-repeat center center / cover;
+}
+
+.form {
+    color: var(--text-color);
+    padding:  20% 2em;
+}
+
+.form .item {
+    padding: 1em 0;
+}
