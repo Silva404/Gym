@@ -1,34 +1,41 @@
 {% extends 'layout.njk' %}
 
 {% block styles %}
+    <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/index.css">
 {% endblock styles %}
 
 {% block content %}
-    <div class="card">
+    <form class="card" method="post" action="/instructors">
         <section class="avatar"></section>
-        <section class="form">
+        <section class="details">
             <h1>
-                Ficha técnica
+                Novo instrutor
             </h1>
             <div class="item">
+                <div>Avatar URL</div>
+                <div><input type="url" name="avatar_url" placeholder="https://"></div>
+            </div>
+            <div class="item">
                 <div>Instrutor</div>
-                <div>Breno Silva</div>
-            </div>  
+                <div><input type="text" name="name" placeholder="Nome do instrutor"></div>
+            </div>
+            <div class="item">
+                <div>Data de nascimento</div>
+                <div><input type="date" name="birth" placeholder=""></div>
+            </div>
             <div class="item">
                 <div>Sexo</div>
-                <div class='button'>Masculino</div>
+                <span><input type="radio" name="gender" value="F">Feminino</span>
+                <span><input type="radio" name="gender" value="M">Masculino</span>
+
             </div>
             <div class="item">
-                <div>Acompanhamento</div>
+                <div>Área de atuação</div>
                 <div>
-                    <span>Musculação</span>
-                    <span>Crossfit</span></div>
+                    <input type="text" name="services" placeholder="Envie as áreas separadas por vírgula"></div>
             </div>
-            <div class="item">
-                <div>Data de início</div>
-                <div>25/11/1998</div>
-            </div>
+            <button type="submit">Salvar</button>
         </section>
-    </div>
+    </form>
 {% endblock content %}

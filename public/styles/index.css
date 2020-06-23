@@ -1,7 +1,7 @@
 .card {
     min-width: 600px;
     width: 60%;
-    min-height: 600px;
+
     margin: 3em auto;
     background: #FFFFFF;
 
@@ -11,6 +11,7 @@
     box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.5);
     opacity: 0;
     animation: 800ms ease 400ms forwards up;
+    color: var(--text-color);
 }
 
 @keyframes up {
@@ -27,48 +28,77 @@
     background: url('https://source.unsplash.com/collection/10552289/900x900') no-repeat center center / cover;
 }
 
-.form {
-    color: var(--text-color);
-    padding: 4em 2em;
+.details {
+    padding: 2em;
 }
 
-.form h1 {
-    font-size: 2.8rem;
-    text-transform: uppercase;
-}
-
-.form .item {
+.details .item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding: 1em 0;
 }
 
-.form .item div:nth-child(1) {
-    font-size: 1.2rem;
-    color: var(--desc-color);
-    letter-spacing: 0.7px;
-    line-height: 2em;
+.details .item:last-child {
+    border: none;
 }
 
-.form .item div:nth-child(2) {
+
+.details .item div:nth-child(1) {
+    color: var(--desc-color);
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+}
+
+.details .item div:nth-child(2) {
+    color: var(--font-color);
     font-size: 1.8rem;
     font-weight: 500;
-    background: var(--button-color);
-    color: var(-button-text-color);
-
-    padding: 1em;
-    border-radius: 8px;
 }
 
-.form .item span {
-    padding: 0.5em 2em;
-    font-size: 1.4rem;
+.details h1 {
+    text-transform: uppercase;
+}
+
+.details .item span {
+    padding: 0.5em 1em;
     background: var(--yellow-button);
     border-radius: 1em;
+    margin: 0.5em 0.25em 0 0;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1.2rem;
 }
 
-.form .item:nth-child(4) div:nth-child(2) {
-    background: none;
+
+/* /create */
+
+input {
+    width: 100%;
+    border: 0;
+    outline: none;
+
+    color: var(--font-color);
+    font-size: 1.6rem;
+    font-weight: 500;
 }
 
-.form .item span + span {
-    margin-left: 10px;
+input[type="radio"] {
+    width: initial;
+    margin-right: 0.5em;
+}
+
+input::placeholder {
+    color: var(--desc-color);
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+button[type="submit"] {
+    padding: 0.5em 2em;
+    background: var(--primary-color);
+    border-radius: 0.25em;
+    margin-top: 2em;
+    width: 100%;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 700;
 }
