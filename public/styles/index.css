@@ -1,8 +1,7 @@
 .card {
-    min-width: 300px;
-    width: 60%;
-    height: 80%;
     min-width: 600px;
+    width: 60%;
+    min-height: 600px;
     margin: 3em auto;
     background: #FFFFFF;
 
@@ -30,9 +29,46 @@
 
 .form {
     color: var(--text-color);
-    padding:  20% 2em;
+    padding: 4em 2em;
+}
+
+.form h1 {
+    font-size: 2.8rem;
+    text-transform: uppercase;
 }
 
 .form .item {
     padding: 1em 0;
+}
+
+.form .item div:nth-child(1) {
+    font-size: 1.2rem;
+    color: var(--desc-color);
+    letter-spacing: 0.7px;
+    line-height: 2em;
+}
+
+.form .item div:nth-child(2) {
+    font-size: 1.8rem;
+    font-weight: 500;
+    background: var(--button-color);
+    color: var(-button-text-color);
+
+    padding: 1em;
+    border-radius: 8px;
+}
+
+.form .item span {
+    padding: 0.5em 2em;
+    font-size: 1.4rem;
+    background: var(--yellow-button);
+    border-radius: 1em;
+}
+
+.form .item:nth-child(4) div:nth-child(2) {
+    background: none;
+}
+
+.form .item span + span {
+    margin-left: 10px;
 }

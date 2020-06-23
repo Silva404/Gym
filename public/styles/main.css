@@ -4,8 +4,10 @@
 :root {    
     --primary-color: #3a5ca0;
     --text-color: #1F2F49;
-    --button-color: #F3EFFF;
+    --button-color: #f7f5ff;
+    --button-text-color: #747df8;
     --desc-color: #777777;
+    --yellow-button: #FFC190;
 }
 
 * {
@@ -49,15 +51,16 @@ nav {
 
 footer {
     margin-top: auto;
+    padding: 4em 0;
     width: 100%;
-    height: 60px;
+    border-top: 1px solid var(--text-color);
+    background: rgba(0, 0, 0, 0.4);
 
     font-size: 1.4rem;    
 
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Montserrat;
 }
 
 .links a {
