@@ -5,8 +5,9 @@ const routes = require('./routes')
 
 const server = express()
 
-server.use(express.static('public'))
+
 server.use(routes)
+server.use(express.static('public'))
 
 server.set('view engine', 'njk')
 
@@ -16,6 +17,6 @@ nunjucks.configure('views', {
     autoescape: false
 })
 
-server.listen(5000, () => {
+server.listen(3000, () => {
     console.log('Server is on!')
 })
