@@ -1,6 +1,10 @@
 const fs = require('fs')
 const data = require('./data.json')
 
+exports.show = (req, res) => {
+    
+}
+
 // create
 exports.post = (req, res) => {
     // form authentication
