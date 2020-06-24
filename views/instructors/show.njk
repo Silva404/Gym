@@ -1,0 +1,42 @@
+{% extends 'layout.njk' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/index.css">
+{% endblock styles %}
+
+{% block content %}
+    <div class="card">
+        <section class="avatar"> <img src="{{ instructor.avatar_url }}" alt="{{ instructor.name }}"></section>
+        <section class="details">
+            <h1>
+                Ficha técnica
+            </h1>
+            <div class="item">
+                <div>Instrutor</div>
+                <div>{{ instructor.name }}</div>
+            </div>
+            <div class="item">
+                <div>Idade</div>
+                <div class='button'>{{ instructor.age }}</div>
+            </div>
+            <div class="item">
+                <div>Sexo</div>
+                <div class='button'>{{ "Feminino" if instructor.gender == 'F' else "Masculino"}}</div>
+            </div>
+            <div class="item">
+                <div>Acompanhamento</div>
+                <div>
+                    {% for service in instructor.services %}
+                        <span>{{  service }}</span>
+                    {% endfor %}
+
+                    {# <span>Crossfit</span> #}
+                </div>
+            </div>
+            <div class="item">
+                <div>Data de início</div>
+                <div>{{ instructor.created_at }}</div>
+            </div>
+        </section>
+    </div>
+{% endblock content %}

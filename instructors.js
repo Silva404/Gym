@@ -1,14 +1,21 @@
 const fs = require('fs')
 const data = require('./data.json')
 
+// show
 exports.show = (req, res) => {
     const { id } = req.params
 
-    const foundInstructors = data.instructors.find(instructors => instructors.id == id)
+    const foundInstructors = data.instructors.find(instructor => instructor.id == id)
+    if(!foundInstructors) return res.send('not found')
 
-    if (!foundInstructors) return res.send('Not found')
+    const instructor = {
+        ...foundInstructors,    
+        age: '',
+        services: foundInstructors.services.split(','),
+        created_at: '',        
+    }
 
-    return res.send(foundInstructors)
+    return res.render('instructors/show', { instructor })
 }
 
 // create
@@ -27,7 +34,7 @@ exports.post = (req, res) => {
     // data conversion     
     birth = Date.parse(birth)
     const created_at = Date.now()
-    const id = Number(data.instructors.length++)
+    const id = Number(data.instructors.length + 1)
 
     data.instructors.push({
         avatar_url,
@@ -46,8 +53,3 @@ exports.post = (req, res) => {
         return res.redirect('/instructors')
     })
 }
-
-// update
-
-
-// delete

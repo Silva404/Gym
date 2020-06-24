@@ -1,24 +1,22 @@
 {
   "instructors": [
-    null,
     {
       "avatar_url": "https://google.com",
-      "birth": 3507932113200000,
+      "birth": 351986094000000,
       "gender": "M",
-      "id": 0,
-      "services": "Bodybuilding",
+      "id": 1,
+      "services": "Bodybuilding, Powerlifting",
       "name": "Carlos Breno Soares da Silva",
-      "created_at": 1593033322939
+      "created_at": 1593035773388
     },
-    null,
     {
       "avatar_url": "https://google.com",
-      "birth": -58003344000000,
+      "birth": 351986094000000,
       "gender": "M",
       "id": 2,
-      "services": "Powerlifting",
-      "name": "Carlos Breno Soarasaes da Silva",
-      "created_at": 1593033406549
+      "services": "Bodybuilding",
+      "name": "Carlos Breno Soares da Silva",
+      "created_at": 1593035773388
     }
   ]
 }
