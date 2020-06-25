@@ -28,7 +28,13 @@ exports.edit = (req, res) => {
     const foundInstructors = data.instructors.find(instructor => instructor.id == id)
     if(!foundInstructors) return res.send('not found')
 
-    return res.render('instructors/edit', { instructor: foundInstructors })
+    const instructor = {
+        ...foundInstructors,
+        birth: date(foundInstructors.birth)
+    }
+
+
+    return res.render('instructors/edit', { instructor })
 }
 
 // create
