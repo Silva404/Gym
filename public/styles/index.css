@@ -25,7 +25,7 @@
 }
 
 .avatar {
-    /* background: url('https://source.unsplash.com/collection/10552289/900x900') no-repeat center center / cover; */
+    background: url('https://source.unsplash.com/collection/10552289/900x900') no-repeat center center / cover;
 }
 
 .details {
@@ -92,7 +92,8 @@ input::placeholder {
     font-weight: 300;
 }
 
-button[type="submit"] {
+button[type="submit"],
+a.button {
     padding: 0.5em 2em;
     background: var(--primary-color);
     border-radius: 0.25em;
@@ -101,4 +102,9 @@ button[type="submit"] {
     border: none;
     color: #FFFFFF;
     font-weight: 700;
+}
+
+a.button {
+    text-align: center;
+    display: block;
 }
