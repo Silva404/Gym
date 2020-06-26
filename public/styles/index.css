@@ -103,6 +103,10 @@ a.button {
     color: #FFFFFF;
     font-weight: 700;
 }
+button[type="submit"]:nth-child(1) {
+    margin-top: 1em;
+    background: var(--delete-button);
+}
 
 a.button {
     text-align: center;
