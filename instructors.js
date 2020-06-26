@@ -103,7 +103,10 @@ exports.delete = (req, res) => {
 
     data.instructors = filteredInstructors
 
-    fs.writeFile("data.json",)
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), err => {
+        if (err) res.send('User not found')
 
-    return res.redirect('/instructors')
+        return res.redirect('/instructors')
+    })
+
 }

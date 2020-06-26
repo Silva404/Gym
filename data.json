@@ -86,15 +86,6 @@
       "name": "Carlos Breno da Sil",
       "services": "Professor",
       "created_at": 1593185084514
-    },
-    {
-      "avatar_url": "https://aea.com",
-      "birth": 186969600000,
-      "gender": "M",
-      "id": "11",
-      "name": "Carlos Breno Soares da Silva",
-      "services": "Designer",
-      "created_at": 1593185380889
     }
   ]
 }
