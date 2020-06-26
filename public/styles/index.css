@@ -24,8 +24,9 @@
     }
 }
 
-.avatar {
-    background: url('https://source.unsplash.com/collection/10552289/900x900') no-repeat center center / cover;
+.avatar  {
+    background-position: center;
+    background-size: cover;
 }
 
 .details {
@@ -58,7 +59,7 @@
     text-transform: uppercase;
 }
 
-.details .item span {
+.item span {
     padding: 0.5em 1em;
     background: var(--yellow-button);
     border-radius: 1em;
@@ -105,6 +106,10 @@ button[type="submit"]:nth-child(2) {
     background: var(--delete-button);
 }
 
+td a {
+    text-transform: uppercase;
+}
+
 a.button {
     text-align: center;
     display: block;
@@ -136,4 +141,29 @@ table {
 
 .table-container td a {
     margin: auto 0;
+}
+
+tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+}
+
+th {
+    color: var(--desc-color);
+}
+
+tbody tr td:first-child span {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 3px 1px 6px -4px black;
+    border: 2px solid var(--yellow-button);
+}
+
+th:last-child,
+td:last-child {
+    text-align: center;
 }
