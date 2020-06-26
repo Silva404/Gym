@@ -68,9 +68,6 @@
     font-size: 1.2rem;
 }
 
-
-/* /create */
-
 input {
     width: 100%;
     border: 0;
@@ -103,12 +100,40 @@ a.button {
     color: #FFFFFF;
     font-weight: 700;
 }
-button[type="submit"]:nth-child(1) {
-    margin-top: 1em;
+button[type="submit"]:nth-child(2) {
+    margin-top: 0.5em;
     background: var(--delete-button);
 }
 
 a.button {
     text-align: center;
     display: block;
+}
+
+.table-container {
+    display: block;
+    padding: 3em;
+}
+
+table {
+    width: 100%;
+}
+
+.table-container th,
+.table-container td {
+    padding: 1em 0;
+    text-align: left;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.table-container td:last-child {
+    border: 0;
+}
+
+.table-container td {
+    margin-right: 1em;
+}
+
+.table-container td a {
+    margin: auto 0;
 }

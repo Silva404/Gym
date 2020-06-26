@@ -5,30 +5,28 @@
 {% endblock styles %}
 
 {% block content %}
-    <div class="card">
-        <section class="avatar"></section>
-        <section class="details">
-            <h1>
-                Ficha técnica
-            </h1>
-            <div class="item">
-                <div>Instrutor</div>
-                <div>Breno Silva</div>
-            </div>  
-            <div class="item">
-                <div>Sexo</div>
-                <div class='button'>Masculino</div>
-            </div>
-            <div class="item">
-                <div>Acompanhamento</div>
-                <div>
-                    <span>Musculação</span>
-                    <span>Crossfit</span></div>
-            </div>
-            <div class="item">
-                <div>Data de início</div>
-                <div>25/11/1998</div>
-            </div>
-        </section>
+    <div class="card table-container">
+        <table >
+            <thead>
+                <tr>
+                    <th>Instrutor</th>
+                    <th>Acompanhamento</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for instructor in instructors %}
+                    <tr>
+                        <td>
+                            {{ instructor.name }}
+                        </td>
+                        <td>
+                            {{ instructor.services }}
+                        </td>
+                        <td><a href="/instructors/{{instructor.id}}" class="button">Ver</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 {% endblock content %}
