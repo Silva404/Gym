@@ -1,40 +1,10 @@
 const fs = require('fs')
 const data = require('../data.json')
 const { age, formatter, date } = require('../utilities')
+const { parse } = require('path')
 
 exports.index = (req, res) => {
     return res.render('members/index', { members: data.members })
-}
-
-exports.show = (req, res) => {
-    const { id } = req.params
-
-    const foundMembers = data.members.find(member => member.id == id)
-    if (!foundMembers) return res.send('not found')
-
-    const member = {
-        ...foundMembers,
-        age: age(foundMembers.birth),
-        // services: foundMembers.services.split(','),
-        created_at: formatter.format(foundMembers.created_at),
-    }
-
-    return res.render('members/show', { member })
-}
-
-exports.edit = (req, res) => {
-    const { id } = req.params
-
-    const foundMembers = data.members.find(member => member.id == id)
-    if (!foundMembers) return res.send('not found')
-
-    const member = {
-        ...foundMembers,
-        birth: date(foundMembers.birth)
-    }
-
-
-    return res.render('members/edit', { member })
 }
 
 exports.create = (req, res) => {
@@ -49,21 +19,19 @@ exports.post = (req, res) => {
             res.send('Please fill and the fields!')
     }
 
-    let { avatar_url, birth, gender, services, name } = req.body
+    birth = Date.parse(req.body.birth)
 
-    birth = Date.parse(birth)
-    const created_at = Date.now()
-    const id = Number(data.members.length + 1)
-    const services_New = services.split(',')
+    let id = 1
+    const lastMember = data.members[data.members.length - 1]
+
+    if (lastMember) {
+        id == lastMember.id + 1
+    }
 
     data.members.push({
-        avatar_url,
-        birth,
-        gender,
         id,
-        name,
-        services: services_New,
-        created_at
+        ...req.body,
+        birth
     })
 
     fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
@@ -71,6 +39,39 @@ exports.post = (req, res) => {
 
         return res.redirect(`/members/${id}`)
     })
+}
+
+exports.show = (req, res) => {
+    const { id } = req.params
+
+    const foundMembers = data.members.find(member => member.id == id)
+    if (!foundMembers) return res.send('not found')
+
+    const member = {
+        ...foundMembers,
+        age: age(foundMembers.birth),
+        weight: `${foundMembers.weight} kg`,
+        height: `${foundMembers.height} cm`,
+        birth: date(foundMembers.birth).birthday
+    }
+
+    return res.render('members/show', { member })
+}
+
+exports.edit = (req, res) => {
+    const { id } = req.params
+
+    const foundMembers = data.members.find(member => member.id == id)
+    if (!foundMembers) return res.send('not found')
+
+    const member = {
+        ...foundMembers,
+        birth: date(foundMembers.birth),
+        blood: foundMembers.blood
+    }
+
+
+    return res.render('members/edit', { member })
 }
 
 exports.put = (req, res) => {
@@ -108,7 +109,7 @@ exports.put = (req, res) => {
 exports.delete = (req, res) => {
     const { id } = req.body
 
-    const filteredMembers = data.members.filter( member => member.id != id)
+    const filteredMembers = data.members.filter(member => member.id != id)
 
     data.members = filteredMembers
 

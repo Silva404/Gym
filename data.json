@@ -1,18 +1,16 @@
 {
   "members": [
     {
-      "avatar_url": "https://images.unsplash.com/photo-1554244933-d876deb6b2ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      "birth": 913593600000,
-      "gender": "M",
       "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1554244933-d876deb6b2ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       "name": "Carlos Breno Soares da Silva",
-      "services": [
-        "Professor",
-        "Natação",
-        "Bodybuilding",
-        "Futebol"
-      ],
-      "created_at": 1593286566381
+      "email": "brenosilva0252@gmail.com",
+      "birth": 914544000000,
+      "gender": "M",
+      "blood": "AB+",
+      "weight": "83",
+      "height": "182",
+      "sport": "natacao"
     }
   ],
   "instructors": [

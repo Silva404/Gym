@@ -3,8 +3,12 @@
     <div><input type="url" name="avatar_url" placeholder="https://" value="{{member.avatar_url}}"></div>
 </div>
 <div class="item">
-    <div>Instrutor</div>
-    <div><input type="text" name="name" placeholder="Nome do instrutor" value="{{member.name}}"></div>
+    <div>Nome</div>
+    <div><input type="text" name="name" value="{{member.name}}"></div>
+</div>
+<div class="item">
+    <div>Email</div>
+    <div><input type="email" name="email" value="{{member.email}}"></div>
 </div>
 <div class="item">
     <div>Data de nascimento</div>
@@ -12,17 +16,42 @@
 </div>
 <div class="item">
     <div>Sexo</div>
-    <span><input type="radio" name="gender" value="F" {% if member.gender == 'F' %}
-    checked
-    {% endif %}>Feminino </span>
-    <span><input type="radio" name="gender" value="M" {% if member.gender == 'M' %}
-    checked
-    {% endif %}>Masculino</span>
+    <span><input type="radio" name="gender" value="F" {% if member.gender == 'F' %} checked="checked" {% endif %}>Feminino
+    </span>
+    <span><input type="radio" name="gender" value="M" {% if member.gender == 'M' %} checked="checked" {% endif %}>Masculino</span>
 
 </div>
 <div class="item">
-    <div>Área de atuação</div>
+    <div>Tipo sanguíneo</div>
+    <select name="blood">
+        <option name="A+" {% if member.blood == "A+" %} selected {% endif %}>A+</option>
+        <option name="A-" {% if member.blood == "A0" %} selected {% endif %}>A-</option>
+        <option name="B+" {% if member.blood == "B+" %} selected {% endif %}>B+</option>
+        <option name="B-" {% if member.blood == "B0" %} selected {% endif %}>B-</option>
+        <option name="AB+" {% if member.blood == "AB+" %} selected {% endif %}>AB+</option>
+        <option name="AB-" {% if member.blood == "AB-" %} selected {% endif %}>AB-</option>
+        <option name="O+" {% if member.blood == "O+" %} selected {% endif %}>O+</option>
+        <option name="O-" {% if member.blood == "O-" %} selected {% endif %}>O-</option>
+    </select>
+</div>
+<div class="item">
+    <div>Peso (em kg)</div>
     <div>
-        <input type="text" name="services" placeholder="Envie as áreas separadas por vírgula" value="{{member.services}}"></div>
+        <input type="number" name="weight" value="{{member.weight}}"></div>
+</div>
+<div class="item">
+    <div>Altura (em cm)</div>
+    <div>
+        <input type="number" name="height" value="{{member.height}}"></div>
+</div>
+<div class="item">
+    <div>Modalidade esportiva</div>
+    <select name="sport">
+        <option value="natacao">Natação</option>
+        <option value="musculacao">Musculação</option>
+        <option value="powerlifting">Powerlifting</option>
+        <option value="yoga">Yoga</option>
+        <option value="capoeira">Capoeira</option>
+    </select>
 </div>
 <button type="submit">Salvar</button>

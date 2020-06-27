@@ -12,30 +12,32 @@
                 Ficha técnica
             </h1>
             <div class="item">
-                <div>Instrutor</div>
+                <div>Membro</div>
                 <div>{{ member.name }}</div>
             </div>
             <div class="item">
-                <div>Idade</div>
-                <div class='button'>{{ member.age }}</div>
+                <div>Email</div>
+                <div>{{ member.email }}</div>
+            </div>
+            <div class="item">
+                <div>Data de aniversário</div>
+                <div class='button'>{{ member.birth }}</div>
             </div>
             <div class="item">
                 <div>Sexo</div>
                 <div class='button'>{{ "Feminino" if member.gender == 'F' else "Masculino"}}</div>
             </div>
             <div class="item">
-                <div>Acompanhamento</div>
-                <div>
-                    {% for service in member.services %}
-                        <span>{{  service }}</span>
-                    {% endfor %}
-
-                    {# <span>Crossfit</span> #}
-                </div>
+                <div>Tipo sanguíneo</div>
+                <div>{{ member.blood }}</div>
             </div>
             <div class="item">
-                <div>Data de início</div>
-                <div>{{ member.created_at }}</div>
+                <div>Peso (em kg)</div>
+                <div>{{ member.weight }}</div>
+            </div>
+            <div class="item">
+                <div>Altura (em cm)</div>
+                <div>{{ member.height }}</div>
             </div>
             <a href="/members/{{ member.id }}/edit" class="button">Edit</a>
         </section>

@@ -91,7 +91,18 @@ input::placeholder {
 }
 
 button[type="submit"],
-a.button {
+a.button,
+button[type="submit"]:nth-child(2),
+.item span {
+    box-shadow: 0 1.25em 1.9em 0 rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+button[type="submit"],
+a.button,
+.card > a {
     padding: 0.5em 2em;
     background: var(--primary-color);
     border-radius: 0.25em;
@@ -100,7 +111,17 @@ a.button {
     border: none;
     color: #FFFFFF;
     font-weight: 700;
+    font-size: 1.4rem;
 }
+
+.table-container > a {
+    margin-top: 0;
+    margin-bottom: 1em;
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+}
+
 button[type="submit"]:nth-child(2) {
     margin-top: 0.5em;
     background: var(--delete-button);
@@ -135,17 +156,13 @@ table {
     border: 0;
 }
 
-.table-container td {
-    margin-right: 1em;
-}
-
 .table-container td a {
     margin: auto 0;
 }
 
 tbody tr td:first-child {
     display: grid;
-    grid-template-columns: 0.6fr 1fr;
+    grid-template-columns: 0.35fr 1fr;
     align-items: center;
 }
 
@@ -154,16 +171,19 @@ th {
 }
 
 tbody tr td:first-child span {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     background-position: center;
-    background-size: cover;
-    box-shadow: 3px 1px 6px -4px black;
+    background-size: cover;    
     border: 2px solid var(--yellow-button);
 }
 
 th:last-child,
 td:last-child {
     text-align: center;
+}
+
+tbody tr {
+    height: 100%;
 }
