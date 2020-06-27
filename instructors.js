@@ -62,7 +62,7 @@ exports.post = (req, res) => {
         gender,
         id,
         name,
-        services_New,
+        services: services_New,
         created_at
     })
 

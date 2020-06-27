@@ -5,8 +5,13 @@
       "birth": 909878400000,
       "gender": "M",
       "id": 1,
-      "services_New": ["Bodybuilding", "Powerlifting"],
-      "name": "Carlos Breno Soares da Silva",
+      "services": [
+        "Professor",
+        "Natação",
+        "Bodybuilding",
+        "Futebol"
+      ],
+      "name": "Breno Silva",
       "created_at": 1593035773388
     },
     {
@@ -14,7 +19,9 @@
       "birth": 911952000000,
       "gender": "M",
       "id": 3,
-      "services_New": ["Bodybuilding"],
+      "services": [
+        "Bodybuilding"
+      ],
       "name": "brenoo",
       "created_at": 1593091931088
     },
@@ -24,11 +31,23 @@
       "gender": "F",
       "id": 3,
       "name": "Bibia",
-      "services_New": [
+      "services": [
         "Artes",
-        " Fotografia"
+        "Fotografia"
       ],
       "created_at": 1593277652543
+    },
+    {
+      "avatar_url": "https://images.unsplash.com/photo-1554244933-d876deb6b2ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+      "birth": 915062400000,
+      "gender": "M",
+      "id": 4,
+      "name": "Carlos Breno Soares da Silva",
+      "services": [
+        "Artes",
+        "Fotografia"
+      ],
+      "created_at": 1593279864761
     }
   ]
 }
