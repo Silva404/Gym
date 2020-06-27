@@ -145,7 +145,7 @@ table {
 
 tbody tr td:first-child {
     display: grid;
-    grid-template-columns: 64px 1fr;
+    grid-template-columns: 0.6fr 1fr;
     align-items: center;
 }
 
@@ -154,8 +154,8 @@ th {
 }
 
 tbody tr td:first-child span {
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
     border-radius: 50%;
     background-position: center;
     background-size: cover;
