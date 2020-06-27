@@ -54,14 +54,7 @@ exports.post = (req, res) => {
     birth = Date.parse(birth)
     const created_at = Date.now()
     const id = Number(data.instructors.length + 1)
-    // const update = {
-    //     ...req.body,
-    //     services: data.services.split(','),
-    //     created_at: created_at,
-    //     id: id
-    // }
-
-    // data.instructors.push(update)
+    const services_New = services.split(',')
 
     data.instructors.push({
         avatar_url,
@@ -69,7 +62,7 @@ exports.post = (req, res) => {
         gender,
         id,
         name,
-        services,
+        services_New,
         created_at
     })
 
