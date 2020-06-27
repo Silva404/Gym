@@ -22,9 +22,7 @@
       "gender": "M",
       "id": 1,
       "services": [
-        "Professor",
-        "Natação",
-        "Bodybuilding"
+        "Professor"
       ],
       "name": "Breno Silva Ilva",
       "created_at": 1593035773388
