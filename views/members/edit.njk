@@ -7,19 +7,19 @@
 
 {% block content %}
     <div class="card">
-        <section class="avatar" style="background-image: url({{ instructor.avatar_url }})"></section>
+        <section class="avatar" style="background-image: url({{ member.avatar_url }})"></section>
         <section class="details">
-            <form method="post" action="/instructors?_method=PUT">
+            <form method="post" action="/members?_method=PUT">
                 <h1>
                     Editar instrutor
                 </h1>
 
-                {% include 'instructors/fields.njk' %}
-                <input type="hidden" name="id" value="{{ instructor.id}}">
+                {% include 'members/fields.njk' %}
+                <input type="hidden" name="id" value="{{ member.id}}">
             </form>
 
-            <form method="post" action="/instructors?_method=DELETE">
-                <input type="hidden" name="id" value="{{ instructor.id}}">
+            <form method="post" action="/members?_method=DELETE">
+                <input type="hidden" name="id" value="{{ member.id}}">
                 <button type="submit">Delete</button>
             </form>
         </section>

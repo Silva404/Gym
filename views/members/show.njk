@@ -1,0 +1,43 @@
+{% extends 'layout.njk' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/index.css">
+{% endblock styles %}
+
+{% block content %}
+    <div class="card">
+        <section class="avatar" style="background-image: url({{ member.avatar_url }})"></section>
+        <section class="details">
+            <h1>
+                Ficha técnica
+            </h1>
+            <div class="item">
+                <div>Instrutor</div>
+                <div>{{ member.name }}</div>
+            </div>
+            <div class="item">
+                <div>Idade</div>
+                <div class='button'>{{ member.age }}</div>
+            </div>
+            <div class="item">
+                <div>Sexo</div>
+                <div class='button'>{{ "Feminino" if member.gender == 'F' else "Masculino"}}</div>
+            </div>
+            <div class="item">
+                <div>Acompanhamento</div>
+                <div>
+                    {% for service in member.services %}
+                        <span>{{  service }}</span>
+                    {% endfor %}
+
+                    {# <span>Crossfit</span> #}
+                </div>
+            </div>
+            <div class="item">
+                <div>Data de início</div>
+                <div>{{ member.created_at }}</div>
+            </div>
+            <a href="/members/{{ member.id }}/edit" class="button">Edit</a>
+        </section>
+    </div>
+{% endblock content %}

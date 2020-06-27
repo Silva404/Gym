@@ -1,4 +1,17 @@
 {
+  "members": [
+    {
+      "avatar_url": "https://source.unsplash.com/collection/10552289/900x900",
+      "birth": 913593600000,
+      "gender": "M",
+      "id": 1,
+      "name": "Carlos Breno Soares da Silva",
+      "services": [
+        "Professor"
+      ],
+      "created_at": 1593286566381
+    }
+  ],
   "instructors": [
     {
       "avatar_url": "https://images.unsplash.com/photo-1554244933-d876deb6b2ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
@@ -8,17 +21,16 @@
       "services": [
         "Professor",
         "Natação",
-        "Bodybuilding",
-        "Futebol"
+        "Bodybuilding"
       ],
-      "name": "Breno Silva",
+      "name": "Breno Silva Ilva",
       "created_at": 1593035773388
     },
     {
       "avatar_url": "https://images.unsplash.com/photo-1504364269860-8be73aabdff2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=534&q=80",
       "birth": 911952000000,
       "gender": "M",
-      "id": 3,
+      "id": 2,
       "services": [
         "Bodybuilding"
       ],
@@ -30,7 +42,7 @@
       "birth": 921024000000,
       "gender": "F",
       "id": 3,
-      "name": "Bibia",
+      "name": "Bibiaa",
       "services": [
         "Artes",
         "Fotografia"
@@ -48,6 +60,30 @@
         "Fotografia"
       ],
       "created_at": 1593279864761
+    },
+    {
+      "avatar_url": "https://images.unsplash.com/photo-1554244933-d876deb6b2ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+      "birth": 911952000000,
+      "gender": "M",
+      "id": 5,
+      "name": "Breno Silva",
+      "services": [
+        "Professor",
+        " Natação",
+        " Bodybuilding"
+      ],
+      "created_at": 1593286326177
+    },
+    {
+      "avatar_url": "https://images.unsplash.com/photo-1554244933-d876deb6b2ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+      "birth": -61695475200000,
+      "gender": "M",
+      "id": 6,
+      "name": "Carlos Breno Soares da Silva",
+      "services": [
+        "Professor"
+      ],
+      "created_at": 1593286447385
     }
   ]
 }
