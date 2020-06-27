@@ -15,7 +15,7 @@ exports.show = (req, res) => {
     const member = {
         ...foundMembers,
         age: age(foundMembers.birth),
-        services: foundMembers.services.split(','),
+        // services: foundMembers.services.split(','),
         created_at: formatter.format(foundMembers.created_at),
     }
 
