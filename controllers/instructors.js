@@ -66,7 +66,7 @@ exports.show = (req, res) => {
     const instructor = {
         ...foundInstructors,
         age: age(foundInstructors.birth),
-        created_at: formatter.format(foundInstructors.created_at),
+        created_at: date(foundInstructors.created_at).created,
     }
 
     return res.render('instructors/show', { instructor })

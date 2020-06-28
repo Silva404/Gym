@@ -66,7 +66,7 @@ exports.edit = (req, res) => {
 
     const member = {
         ...foundMembers,
-        birth: date(foundMembers.birth),
+        birth: date(foundMembers.birth).iso,
         blood: foundMembers.blood
     }
 
