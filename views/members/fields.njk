@@ -47,11 +47,11 @@
 <div class="item">
     <div>Modalidade esportiva</div>
     <select name="sport">
-        <option value="natacao">Natação</option>
-        <option value="musculacao">Musculação</option>
-        <option value="powerlifting">Powerlifting</option>
-        <option value="yoga">Yoga</option>
-        <option value="capoeira">Capoeira</option>
+        <option value="natacao" {% if member.sport == "natacao" %} selected {% endif %}>Natação</option>
+        <option value="musculacao" {% if member.sport == "musculacao" %} selected {% endif %}>Musculação</option>
+        <option value="powerlifting" {% if member.sport == "powerlifting" %} selected {% endif %}>Powerlifting</option>
+        <option value="yoga" {% if member.sport == "yoga" %} selected {% endif %}>Yoga</option>
+        <option value="capoeira" {% if member.sport == "capoeira" %} selected {% endif %}>Capoeira</option>
     </select>
 </div>
 <button type="submit">Salvar</button>

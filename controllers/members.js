@@ -21,12 +21,14 @@ exports.post = (req, res) => {
 
     birth = Date.parse(req.body.birth)
 
-    let id = 1
-    const lastMember = data.members[data.members.length - 1]
+    // let id = 1
+    // const lastMember = data.members[data.members.length - 1]
 
-    if (lastMember) {
-        id == lastMember.id + 1
-    }
+    // if (lastMember) {
+    //     id == lastMember.id + 1
+    // }
+
+    const id = data.members.length + 1 
 
     data.members.push({
         id,
@@ -86,15 +88,11 @@ exports.put = (req, res) => {
     })
     if (!foundMembers) return res.send('not found')
 
-    let { services } = req.body
-    const services_New = services.split(',')
-
     const member = {
         ...foundMembers,
         ...req.body,
         birth: Date.parse(req.body.birth),
-        id: Number(req.body.id),
-        services: services_New,
+        id: Number(req.body.id)
     }
 
     data.members[index] = member

@@ -6,12 +6,14 @@
 
 {% block content %}
     <div class="card table-container">
-        <a href="/members/create">Novo membro</a> 
+        <a href="/members/create">Novo membro</a>
         <table >
             <thead>
                 <tr>
                     <th>Membro</th>
-                    <th>Acompanhamento</th>
+                    <th>Email</th>
+                    <th>Peso</th>
+                    <th>Altura</th>
                     <th>Ação</th>
                 </tr>
             </thead>
@@ -22,10 +24,14 @@
                             <span style="background-image: url({{ member.avatar_url}})"></span>
                             {{ member.name }}
                         </td>
-                        <td class="item">
-                            {% for service in member.services %}
-                                <span>{{ service }}</span>
-                            {% endfor %}
+                        <td>
+                            {{ member.email}}
+                        </td>
+                        <td>
+                            {{ member.weight}}
+                        </td>
+                        <td>
+                            {{ member.height}}
                         </td>
                         <td>
                             <a href="/members/{{member.id}}" class="button">Ver</a>

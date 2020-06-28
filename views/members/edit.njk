@@ -18,11 +18,12 @@
                 <input type="hidden" name="id" value="{{ member.id}}">
             </form>
 
-            <form method="post" action="/members?_method=DELETE">
+            <form id="form-delete" method="post" action="/members?_method=DELETE">
                 <input type="hidden" name="id" value="{{ member.id}}">
                 <button type="submit">Delete</button>
             </form>
         </section>
-
     </div>
+
+    {# {% include '/scripts/ask_to_delete.js'%} #}
 {% endblock content %}
