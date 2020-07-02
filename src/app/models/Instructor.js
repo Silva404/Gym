@@ -40,10 +40,36 @@ module.exports = {
         })
     },
     find(id, callback) {
-        db.query(`SELECT * FROM instructors WHERE ID = 1$`, [id], (err, results) => {
+        db.query(`SELECT * FROM instructors WHERE id = $1`, [id], (err, results) => {
             if (err) return res.send('Instructor not found')
 
             callback(results.rows[0])
         })
+    },
+    update(data, callback) {
+        const query = `
+        UPDATE instructors SET
+        avatar_url = ($1)
+        name = ($2)
+        birth = ($3)
+        gender = ($4)
+        services = ($5)
+        WHERE id = $6
+        `
+
+        const values = [
+            data.avatar_url,
+            data.name,
+            date(data.birth).iso,
+            data.gender,
+            data.services,
+            data.id
+        ]
+
+        db.query(query, values, (err, results) => {
+            if (err) return res.send('Database error')
+
+            callback()
+        })
     }
-}
+}   
