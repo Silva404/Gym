@@ -42,7 +42,7 @@ module.exports = {
 
             instructor.birth = date(instructor.birth).iso
 
-            return res.render('instructors/show', { instructor })
+            return res.render('instructors/edit', { instructor })
         })
     },
     put(req, res) {
@@ -53,9 +53,13 @@ module.exports = {
                 res.send('Please fill and the fields!')
         }
 
-        Instructor.update(req.body, )
+        Instructor.update(req.body, () => {
+            return res.redirect(`/instructors/${req.body.id}`)
+        })
     },
     delete(req, res) {
-        return
+        Instructor.delete(req.body.id, () => {
+            return res.redirect('/instructors')
+        })
     }
 }
