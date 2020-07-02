@@ -1,4 +1,4 @@
-const { age, formatter, date } = require('../../lib/utils')
+const { formatter, date } = require('../../lib/utils')
 const db = require('../../config/db')
 
 module.exports = {
@@ -6,10 +6,10 @@ module.exports = {
 
         db.query(`SELECT * FROM instructors`, (err, results) => {
             if (err) return res.send('Database error')
-        
-           callback(results.rows)
+
+            callback(results.rows)
         })
-        
+
     },
     create(data, callback) {
         const query = `
@@ -24,19 +24,26 @@ module.exports = {
         RETURNING id
     `
 
-    const values = [
-        data.name,
-        data.avatar_url,
-        data.gender,
-        data.services,
-        date(data.birth).iso,
-        date(Date.now()).iso
-    ]
+        const values = [
+            data.name,
+            data.avatar_url,
+            data.gender,
+            data.services,
+            date(data.birth).iso,
+            date(Date.now()).iso
+        ]
 
-    db.query(query, values, (err, results) => {
-        if (err) return res.send('Database error')
+        db.query(query, values, (err, results) => {
+            if (err) return res.send('Database error')
 
-        callback(results.rows[0])
-    })
+            callback(results.rows[0])
+        })
+    },
+    find(id, callback) {
+        db.query(`SELECT * FROM instructors WHERE ID = 1$`, [id], (err, results) => {
+            if (err) return res.send('User not found')
+
+            callback(results.rows[0])
+        })
     }
 }
