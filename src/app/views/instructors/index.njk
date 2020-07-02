@@ -23,8 +23,8 @@
                             {{ instructor.name }}
                         </td>
                         <td class="item">
+                                <span>{{ instructor.services }}</span>
                             {% for service in instructor.services %}
-                                <span>{{ service }}</span>
                             {% endfor %}
                         </td>
                         <td>
