@@ -26,14 +26,14 @@ module.exports = {
 
     },
     show(req, res) {
-        Instructor.find(req.params.id, instructor => {
-            if(!instructor) return res.send('Instructor not found!')
+        Instructor.find(req.params.id, function (instructor) {
+            if (!instructor) return res.send('Instructor not found')
 
             instructor.age = age(instructor.birth)
             instructor.services = instructor.services.split(',')
-            instructor.created_at = date(instructor.created_at).created
+            instructor.birth = date(instructor.birth).created
 
-            return res.render('instructors/show', { instructor })
+            return res.render('instructors/show', { instructor })    
         })
     },
     edit(req, res) {

@@ -41,7 +41,7 @@ module.exports = {
     },
     find(id, callback) {
         db.query(`SELECT * FROM instructors WHERE ID = 1$`, [id], (err, results) => {
-            if (err) return res.send('User not found')
+            if (err) return res.send('Instructor not found')
 
             callback(results.rows[0])
         })
