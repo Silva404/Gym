@@ -108,24 +108,16 @@ button[type="submit"]:nth-child(2),
 
 button[type="submit"],
 a.button,
-.card > a {
+header a {
     padding: 0.5em 2em;
     background: var(--primary-color);
     border-radius: 0.25em;
     margin-top: 2em;
-    width: 100%;
+    /* width: 100%; */
     border: none;
     color: #FFFFFF;
     font-weight: 700;
     font-size: 1.4rem;
-}
-
-.table-container > a {
-    margin-top: 0;
-    margin-bottom: 1em;
-    display: inline-block;
-    width: 25%;
-    text-align: center;
 }
 
 button[type="submit"]:nth-child(2) {
@@ -192,4 +184,34 @@ td:last-child {
 
 tbody tr {
     height: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin-bottom: 2em;
+}
+
+header a {
+    margin: 0;
+}
+
+header form {
+    display: flex;
+    align-items: center;
+}
+
+header input {
+    border: 1px solid var(--desc-color);
+    margin-right: 0.5em;
+    font-size: 1.3rem;
+    padding: 0.5em;
+    width: 60%;
+}
+
+header button {
+    display: inline;
+    margin: 0 !important;
 }

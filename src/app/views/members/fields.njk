@@ -24,14 +24,14 @@
 <div class="item">
     <div>Tipo sanguíneo</div>
     <select name="blood">
-        <option name="A+" {% if member.blood == "A+" %} selected {% endif %}>A+</option>
-        <option name="A-" {% if member.blood == "A0" %} selected {% endif %}>A-</option>
-        <option name="B+" {% if member.blood == "B+" %} selected {% endif %}>B+</option>
-        <option name="B-" {% if member.blood == "B0" %} selected {% endif %}>B-</option>
-        <option name="AB+" {% if member.blood == "AB+" %} selected {% endif %}>AB+</option>
-        <option name="AB-" {% if member.blood == "AB-" %} selected {% endif %}>AB-</option>
-        <option name="O+" {% if member.blood == "O+" %} selected {% endif %}>O+</option>
-        <option name="O-" {% if member.blood == "O-" %} selected {% endif %}>O-</option>
+        <option name="A+" {% if member.blood == "A+" %} selected="selected" {% endif %}>A+</option>
+        <option name="A-" {% if member.blood == "A0" %} selected="selected" {% endif %}>A-</option>
+        <option name="B+" {% if member.blood == "B+" %} selected="selected" {% endif %}>B+</option>
+        <option name="B-" {% if member.blood == "B0" %} selected="selected" {% endif %}>B-</option>
+        <option name="AB+" {% if member.blood == "AB+" %} selected="selected" {% endif %}>AB+</option>
+        <option name="AB-" {% if member.blood == "AB-" %} selected="selected" {% endif %}>AB-</option>
+        <option name="O+" {% if member.blood == "O+" %} selected="selected" {% endif %}>O+</option>
+        <option name="O-" {% if member.blood == "O-" %} selected="selected" {% endif %}>O-</option>
     </select>
 </div>
 <div class="item">
@@ -44,14 +44,16 @@
     <div>
         <input type="number" name="height" value="{{member.height}}"></div>
 </div>
+
 <div class="item">
     <div>Modalidade esportiva</div>
     <select name="sport">
-        <option value="natacao" {% if member.sport == "natacao" %} selected {% endif %}>Natação</option>
-        <option value="musculacao" {% if member.sport == "musculacao" %} selected {% endif %}>Musculação</option>
-        <option value="powerlifting" {% if member.sport == "powerlifting" %} selected {% endif %}>Powerlifting</option>
-        <option value="yoga" {% if member.sport == "yoga" %} selected {% endif %}>Yoga</option>
-        <option value="capoeira" {% if member.sport == "capoeira" %} selected {% endif %}>Capoeira</option>
+        <option value="natacao" {% if member.sport == "natacao" %} selected="selected" {% endif %}>Natação</option>
+        <option value="musculacao" {% if member.sport == "musculacao" %} selected="selected" {% endif %}>Musculação</option>
+        <option value="powerlifting" {% if member.sport == "powerlifting" %} selected="selected" {% endif %}>Powerlifting</option>
+        <option value="yoga" {% if member.sport == "yoga" %} selected="selected" {% endif %}>Yoga</option>
+        <option value="capoeira" {% if member.sport == "capoeira" %} selected="selected" {% endif %}>Capoeira</option>
     </select>
 </div>
+
 <button type="submit">Salvar</button>

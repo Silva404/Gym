@@ -3,7 +3,6 @@ const Instructor = require('../models/Instructor')
 
 module.exports = {
     index(req, res) {
-
         Instructor.all(function (instructors) {
             return res.render('instructors/index', { instructors })
         })
