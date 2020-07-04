@@ -9,7 +9,8 @@
         <header>
             <a href="/instructors/create">Novo instrutor</a>
             <form action="/instructors" method="GET">
-                <input type="text" name="filter" placeholder="Filtrar por nome">
+                <input type="text" name="filter" placeholder="Filtrar por nome"
+                value="{{ filter }}">
                 <button type="submit">Filtrar</button>
             </form>
         </header>
