@@ -15,21 +15,21 @@ module.exports = {
             limit,
             offset,
             callback(instructors){
-                
+                return res.render('instructors/index', { instructors, filter })
             }
         }
 
         Instructor.paginate(params)
 
-        if (filter) {
-            Instructor.findBy(filter, instructors => {
-                return res.render('instructors/index', { instructors, filter })
-            })
-        } else {
-            Instructor.all( instructors =>{
-                return res.render('instructors/index', { instructors })
-            })
-        }
+        // if (filter) {
+        //     Instructor.findBy(filter, instructors => {
+        //         return res.render('instructors/index', { instructors, filter })
+        //     })
+        // } else {
+        //     Instructor.all( instructors =>{
+        //         return res.render('instructors/index', { instructors })
+        //     })
+        // }
     },
     create(req, res) {
         return res.render('instructors/create')
