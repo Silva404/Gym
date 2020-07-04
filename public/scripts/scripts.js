@@ -9,22 +9,18 @@ for (let item of menuItems) {
 }
 
 let totalPages = 20,
-    selectedPage = 5,
+    selectedPage = 15,
     pages = [],
     oldPage
 
+// [1,...,13,14,15,16,17,...,20]
+
+// const pagesAfterCurrentPage = currentPage >= selectedPage + 2
+// const pagesBeforeSelectedPage = currentPage <= selectedPage - 2
+
 for (let currentPage = 1; currentPage <= totalPages; currentPage++) {
-    const firstAndLastPage = currentPage == 1 || currentPage == totalPages
-    const pagesAfterSelectedPage = currentPage <= selectedPage + 2
-    const pagesBeforeSelectedPage = currentPage >= selectedPage - 2
-
-    if (firstAndLastPage || pagesAfterSelectedPage && pagesBeforeSelectedPage) {
-        if (oldPage && currentPage - oldPage > 2) {
-            pages.push(currentPage)
-        }
-
-        oldPage = currentPage
+    if (currentPage = 1 || currentPage == 20) {
+        pages.push(currentPage)
     }
 }
-
-console.log(pages)  
+console.log(pages)
