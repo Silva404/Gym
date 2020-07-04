@@ -94,5 +94,19 @@ module.exports = {
 
             return callback()
         })
+    },
+    paginate(params){
+        const { filter, limit, offset, callback } = params
+
+        let query = `SELECT * 
+        FROM instructors
+        LEFT JOIN members ON (instructors.id = member.instructors_id)`
+
+        if (filter) {
+            query = `${query}
+            WHERE instructors.name ILIKE ${filter}
+            OR WHERE instructors.services ILIKE ${filter}
+            `
+        }
     }
 }   
