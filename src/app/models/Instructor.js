@@ -96,26 +96,12 @@ module.exports = {
         })
     },
     paginate(params) {
-        const { filter, limit, offset, callback } = params
+        const { filter, page, offset, limit, callback } = params
 
-        let query = `SELECT instructors.*, count(members) as total_students
-        FROM instructors
-        LEFT JOIN members ON (instructors.id = members.instructors_id)`
+        let query = `SELECT * FROM instructors`
 
-        if (filter) {
-            query = `${query}
-            WHERE instructors.name ILIKE ${filter}
-            OR instructors.services ILIKE ${filter}
-            `
+        if ( filter ) {
+            query = ``
         }
-
-        query = `${query}
-        GROUP BY instructors.id LIMIT $1 OFFSET $2`
-
-        db.query(query, [limit, offset], (err, results) => {
-            if (err) throw `Data error: ${err}`
-
-            callback(results.rows)
-        })
     }
 }   

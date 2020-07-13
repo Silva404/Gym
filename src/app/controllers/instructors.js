@@ -12,10 +12,10 @@ module.exports = {
         const params = {
             filter,
             page,
-            limit,
+            limit, 
             offset,
-            callback(instructors){
-                return res.render('instructors/index', { instructors, filter })
+            callback(instructors) {
+                
             }
         }
 
