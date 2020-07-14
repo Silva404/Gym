@@ -18,7 +18,7 @@ module.exports = {
 
                 const pagination = {
                     filter,
-                    // total,
+                    total,
                     page
                 }
 
