@@ -12,7 +12,7 @@ for (let item of menuItems) {
 // em casa de haver somente um pagina entre duas ultimas e a página limite
 // mostrar também esse numero sem os pontinhos
 
-function pagination(selectedPage, totalPages) {
+function paginate(selectedPage, totalPages) {
 
     let pages = [],
         oldPage
@@ -40,3 +40,8 @@ function pagination(selectedPage, totalPages) {
 
     return pages
 }
+
+const pagination = document.querySelector('.pagination')
+const page = +pagination.dataset.page
+const total = +pagination.dataset.total
+const pages = paginate(page, total)
