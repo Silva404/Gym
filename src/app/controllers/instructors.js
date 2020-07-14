@@ -18,11 +18,11 @@ module.exports = {
 
                 const pagination = {
                     filter,
-                    total,
+                    // total,
                     page
                 }
 
-                return res.render('instructors/index', { instructors,  })
+                return res.render('instructors/index', { instructors  })
             }
         } 
 
