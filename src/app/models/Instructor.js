@@ -6,7 +6,7 @@ module.exports = {
 
         db.query(`SELECT instructors.*, count(members) AS total_students
         FROM instructors
-        LEFT JOIN members ON (members.instructors_id = instructors.id)
+        LEFT JOIN members ON (members.instructor = instructors.id)
         GROUP BY instructors.id
         ORDER BY instructors.id DESC`, (err, results) => {
             if (err) throw "Database error"
@@ -53,7 +53,7 @@ module.exports = {
     findBy(filter, callback) {
         db.query(`SELECT instructors.*, count(members) AS total_students
         FROM instructors
-        LEFT JOIN members ON (members.instructors_id = instructors.id)
+        LEFT JOIN members ON (members.instructor = instructors.id)
         WHERE instructors.name ILIKE '%${filter}%'
         GROUP BY instructors.id
         ORDER BY instructors.id DESC`, (err, results) => {
@@ -122,7 +122,7 @@ module.exports = {
             ${totalQuery},
             count(members) AS total_students
             FROM instructors
-            LEFT JOIN members ON (instructors.id = members.instructors_id)
+            LEFT JOIN members ON (instructors.id = members.instructor)
             ${filterQuery}
             GROUP BY instructors.id
             LIMIT $1 OFFSET $2
@@ -131,7 +131,7 @@ module.exports = {
         db.query(query, [limit, offset], (err, results) => {
             if (err) throw `Database error: ${err}`
             
-            console.log(results.rows)
+            console.log(results.rows) 
             callback(results.rows)
         })
     }

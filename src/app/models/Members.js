@@ -36,7 +36,7 @@ module.exports = {
             data.blood,
             data.weight,
             data.height,
-            data.instructor
+            data.instructor 
         ]
 
         db.query(query, values, (err, results) => {
