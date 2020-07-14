@@ -57,10 +57,12 @@
 </div>
 
 <div class="item">
-    <div>Altura (em cm)</div>
+    <div>Instrutor</div>
     <div>
         <select name="instructor">
-            <option value="{{member.instructor}}" {% if member.sport == "natacao" %} selected="selected" {% endif %}>Natação</option>
+            {% for instructor in Instructor_options %}
+                <option value="{{instructor.id}}" {% if instructor.id == members.instructor %} selected="selected" {% endif %}>{{instructor.name}}</option>
+            {% endfor %}
         </select>
     </div>
 </div>

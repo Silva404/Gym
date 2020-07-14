@@ -32,11 +32,11 @@ module.exports = {
             data.name,
             data.gender,
             data.email,
-            date(data.birth).iso,   
+            date(data.birth).iso,
             data.blood,
             data.weight,
             data.height,
-            data.instructor 
+            data.instructor
         ]
 
         db.query(query, values, (err, results) => {
@@ -46,9 +46,9 @@ module.exports = {
         })
     },
     find(id, callback) {
-        db.query(`SELECT members.*, instructors.name AS instructor_name 
+        db.query(`SELECT members.*, members.name AS instructor_name 
         FROM members
-        LEFT JOIN instructors ON (members.instructors_id = instructors.id)
+        LEFT JOIN members ON (members.instructor = members.id)
         WHERE members.id = $1`, [id], (err, results) => {
             if (err) throw `Database error ${err}`
 
@@ -94,10 +94,47 @@ module.exports = {
             return callback()
         })
     },
-    instructorsSelectOptions(callback) {
-        db.query(`SELECT name, id FROM instructors`, (err, results) => {
+    membersSelectOptions(callback) {
+        db.query(`SELECT name, id FROM members`, (err, results) => {
             if (err) throw `Data error: $(err)`
 
+            callback(results.rows)
+        })
+    },
+    paginate(params) {
+        const { filter, offset, limit, callback } = params
+
+        let query = '',
+            filterQuery = '',
+            totalQuery = `(
+                SELECT count(*) FROM members             
+            ) AS total`
+
+        if (filter) {
+
+            filterQuery = `
+            WHERE members.name ILIKE '%${filter}%'
+            OR members.email ILIKE '%${filter}%'
+            `
+
+            totalQuery = `(
+                    SELECT count(*) FROM members
+                    ${filterQuery} 
+             ) AS total`
+        }
+
+        query = `
+            SELECT members.*,
+            ${totalQuery}
+            FROM members
+            ${filterQuery}
+            LIMIT $1 OFFSET $2 
+        `
+
+        db.query(query, [limit, offset], (err, results) => {
+            if (err) throw `Database error: ${err}`
+
+            console.log(results.rows)
             callback(results.rows)
         })
     }
