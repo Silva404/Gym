@@ -130,7 +130,7 @@ module.exports = {
 
         db.query(query, [limit, offset], (err, results) => {
             if (err) throw `Database error: ${err}`
-
+            
             console.log(results.rows)
             callback(results.rows)
         })

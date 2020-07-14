@@ -56,4 +56,13 @@
     </select>
 </div>
 
+<div class="item">
+    <div>Altura (em cm)</div>
+    <div>
+        <select name="instructor">
+            <option value="{{member.instructor}}" {% if member.sport == "natacao" %} selected="selected" {% endif %}>Natação</option>
+        </select>
+    </div>
+</div>
+
 <button type="submit">Salvar</button>
